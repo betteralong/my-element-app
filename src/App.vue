@@ -1,26 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- 添加touchmove -->
+  <div id="app" @touchmove.prevent>
+    <v-Header :seller="seller"></v-Header>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+// import  qs from 'query-string'
+import { getSeller } from 'api'
+import VHeader from 'components/v-header/v-header'
 export default {
   name: 'app',
+  data() {
+    return {
+      seller: {}
+    }
+  },
+  created() {
+    this._getSeller()
+  },
+  methods: {
+    _getSeller() {
+      getSeller().then((seller) => {
+        this.seller = seller
+        console.log('seller', this.seller)
+      })
+    }
+  },
   components: {
-    HelloWorld
+    VHeader
   }
 }
 </script>
 <style lang="stylus">
-#app
-  font-family 'Avenir', Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
-  margin-top 60px
 </style>

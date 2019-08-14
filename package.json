@@ -9,6 +9,11 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "cube-ui": "~1.12.15",
+    "dayjs": "^1.8.15",
+    "good-storage": "^1.1.0",
+    "query-string": "^6.8.2",
+    "ts-axios-new": "^0.1.5",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -21,6 +26,13 @@
     "eslint-plugin-vue": "^5.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "vue-cli-plugin-cube-ui": "^0.2.5",
     "vue-template-compiler": "^2.6.10"
+  },
+  "transformModules": {
+    "cube-ui": {
+      "transform": "cube-ui/src/modules/${member}",
+      "kebabCase": true
+    }
   }
 }
