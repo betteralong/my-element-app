@@ -40,7 +40,7 @@ module.exports = {
         })
       })
       app.get('/api/ratings', function(req, res) {
-        res.join({
+        res.json({
           errno: 0,
           data: ratings
         })
