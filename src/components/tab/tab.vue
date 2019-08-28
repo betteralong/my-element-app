@@ -63,6 +63,9 @@ export default {
       }
     }
   },
+  mounted() {
+    this.onChange(this.index)
+  },
   methods: {
     onChange(current) {
       this.index = current
@@ -84,7 +87,6 @@ export default {
 
 <style lang="stylus" scoped>
   @import "~common/stylus/variable"
-
   .tab
     display: flex
     flex-direction: column
