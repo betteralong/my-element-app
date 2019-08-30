@@ -1,8 +1,8 @@
 import axios from 'ts-axios-new'
 
 const urlMap = {
-  development: '/',
-  production: 'http://ustbhuangyi.com/sell/'
+  development: 'http://47.98.162.231:3000/elm/',
+  production: 'http://47.98.162.231:3000/elm/'
 }
 
 const baseUrl = urlMap[process.env.NODE_ENV]
